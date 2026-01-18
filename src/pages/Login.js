@@ -46,7 +46,7 @@ function Login({ onLogin }) {
         <div className="auth-container">
           <div className="auth-header">
             <h1>Connexion</h1>
-            <p>Connectez-vous à votre compte ArtisanLink</p>
+            <p>Connectez-vous à votre compte DariService</p>
           </div>
 
           {error && <div className="error-message">{error}</div>}

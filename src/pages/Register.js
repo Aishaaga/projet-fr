@@ -64,7 +64,7 @@ function Register({ onRegister }) {
         <div className="auth-container">
           <div className="auth-header">
             <h1>Inscription</h1>
-            <p>Créez votre compte ArtisanLink</p>
+            <p>Créez votre compte DariService</p>
           </div>
 
           {error && <div className="error-message">{error}</div>}

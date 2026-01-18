@@ -13,7 +13,7 @@ function Header({ user, onLogout }) {
         <div className="header-content">
           <Link to="/" className="logo">
             <span className="logo-icon">🔗</span>
-            <span className="logo-text">ArtisanLink</span>
+            <span className="logo-text">DariService</span>
           </Link>
           
           <nav className="nav">

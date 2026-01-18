@@ -10,6 +10,10 @@ import Register from './pages/Register';
 import ArtisansList from './pages/ArtisansList';
 import ArtisanProfile from './pages/ArtisanProfile';
 import ArtisanDashboard from './pages/ArtisanDashboard';
+// Import des images
+import artisan1Image from './assets/pf 1.jpg';
+import artisan2Image from './assets/pf 2.jpg';
+import artisan3Image from './assets/pf 3.jpg';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -40,20 +44,20 @@ function App() {
           services: ['Réparation fuite', 'Installation sanitaire', 'Chauffage', 'Dépannage urgence'],
           email: 'mohammed.najim@email.com',
           phone: '06 12 34 56 78',
-          image: 'https://via.placeholder.com/300x300?text=Jean+Dupont'
+          image: artisan1Image
         },
         {
           id: 2,
-          name: 'Marie Martin',
-          profession: 'Électricienne',
+          name: 'Ahmed Benali',
+          profession: 'Électricien',
           rating: 4.9,
           reviews: 89,
           location: 'Agadir, 85000',
-          description: 'Électricienne certifiée, disponible 7j/7 pour tous vos besoins électriques.',
+          description: 'Électricien certifié, disponible 7j/7 pour tous vos besoins électriques.',
           services: ['Installation électrique', 'Mise aux normes', 'Dépannage', 'Éclairage'],
-          email: 'marie.martin@email.com',
+          email: 'ahmed.benali@email.com',
           phone: '06 98 76 54 32',
-          image: 'https://via.placeholder.com/300x300?text=Marie+Martin'
+          image: artisan2Image
         },
         {
           id: 3,
@@ -66,20 +70,20 @@ function App() {
           services: ['Meubles sur mesure', 'Parquet', 'Fenêtres', 'Armoires'],
           email: 'pierre.leroy@email.com',
           phone: '06 55 44 33 22',
-          image: 'https://via.placeholder.com/300x300?text=Pierre+Leroy'
+          image: artisan3Image
         },
         {
           id: 4,
-          name: 'Sophie Bernard',
+          name: 'Leila Karim',
           profession: 'Peintre',
           rating: 4.6,
           reviews: 203,
           location: 'Agadir, 85000',
           description: 'Peintre décoratrice, travail soigné et respect des délais.',
           services: ['Peinture intérieure', 'Peinture extérieure', 'Papier peint', 'Finition'],
-          email: 'sophie.bernard@email.com',
+          email: 'leila.karim@email.com',
           phone: '06 77 88 99 00',
-          image: 'https://via.placeholder.com/300x300?text=Sophie+Bernard'
+          image: artisan3Image
         }
       ];
       setArtisans(initialArtisans);

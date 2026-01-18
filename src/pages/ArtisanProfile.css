@@ -35,6 +35,7 @@
   height: 200px;
   border-radius: 12px;
   object-fit: cover;
+  object-position: center 30%;
   border: 4px solid #f3f4f6;
 }
 
