@@ -1,0 +1,157 @@
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import ArtisansList from './pages/ArtisansList';
+import ArtisanProfile from './pages/ArtisanProfile';
+import ArtisanDashboard from './pages/ArtisanDashboard';
+
+function App() {
+  const [user, setUser] = useState(null);
+  const [artisans, setArtisans] = useState([]);
+
+  useEffect(() => {
+    // Charger les données utilisateur depuis localStorage
+    const savedUser = localStorage.getItem('user');
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+
+    // Charger les données d'artisans (simulation)
+    const savedArtisans = localStorage.getItem('artisans');
+    if (savedArtisans) {
+      setArtisans(JSON.parse(savedArtisans));
+    } else {
+      // Données initiales d'exemple
+      const initialArtisans = [
+        {
+          id: 1,
+          name: 'Jean Dupont',
+          profession: 'Plombier',
+          rating: 4.8,
+          reviews: 124,
+          location: 'Paris, 75001',
+          description: 'Plombier expérimenté avec plus de 15 ans d\'expérience. Spécialisé en rénovation et dépannage d\'urgence.',
+          services: ['Réparation fuite', 'Installation sanitaire', 'Chauffage', 'Dépannage urgence'],
+          email: 'jean.dupont@email.com',
+          phone: '06 12 34 56 78',
+          image: 'https://via.placeholder.com/300x300?text=Jean+Dupont'
+        },
+        {
+          id: 2,
+          name: 'Marie Martin',
+          profession: 'Électricienne',
+          rating: 4.9,
+          reviews: 89,
+          location: 'Paris, 75011',
+          description: 'Électricienne certifiée, disponible 7j/7 pour tous vos besoins électriques.',
+          services: ['Installation électrique', 'Mise aux normes', 'Dépannage', 'Éclairage'],
+          email: 'marie.martin@email.com',
+          phone: '06 98 76 54 32',
+          image: 'https://via.placeholder.com/300x300?text=Marie+Martin'
+        },
+        {
+          id: 3,
+          name: 'Pierre Leroy',
+          profession: 'Menuisier',
+          rating: 4.7,
+          reviews: 156,
+          location: 'Paris, 75015',
+          description: 'Menuisier artisan depuis 20 ans, création sur mesure et rénovation.',
+          services: ['Meubles sur mesure', 'Parquet', 'Fenêtres', 'Armoires'],
+          email: 'pierre.leroy@email.com',
+          phone: '06 55 44 33 22',
+          image: 'https://via.placeholder.com/300x300?text=Pierre+Leroy'
+        },
+        {
+          id: 4,
+          name: 'Sophie Bernard',
+          profession: 'Peintre',
+          rating: 4.6,
+          reviews: 203,
+          location: 'Paris, 75020',
+          description: 'Peintre décoratrice, travail soigné et respect des délais.',
+          services: ['Peinture intérieure', 'Peinture extérieure', 'Papier peint', 'Finition'],
+          email: 'sophie.bernard@email.com',
+          phone: '06 77 88 99 00',
+          image: 'https://via.placeholder.com/300x300?text=Sophie+Bernard'
+        }
+      ];
+      setArtisans(initialArtisans);
+      localStorage.setItem('artisans', JSON.stringify(initialArtisans));
+    }
+  }, []);
+
+  const handleLogin = (userData) => {
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem('user');
+  };
+
+  const handleRegister = (userData) => {
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
+  };
+
+  const updateArtisan = (updatedArtisan) => {
+    const updatedArtisans = artisans.map(a => 
+      a.id === updatedArtisan.id ? updatedArtisan : a
+    );
+    setArtisans(updatedArtisans);
+    localStorage.setItem('artisans', JSON.stringify(updatedArtisans));
+  };
+
+  return (
+    <Router>
+      <div className="App">
+        <Header user={user} onLogout={handleLogout} />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route 
+              path="/login" 
+              element={user ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} 
+            />
+            <Route 
+              path="/register" 
+              element={user ? <Navigate to="/" /> : <Register onRegister={handleRegister} />} 
+            />
+            <Route 
+              path="/artisans" 
+              element={<ArtisansList artisans={artisans} />} 
+            />
+            <Route 
+              path="/artisan/:id" 
+              element={<ArtisanProfile artisans={artisans} user={user} />} 
+            />
+            <Route 
+              path="/dashboard" 
+              element={
+                user && user.type === 'artisan' ? (
+                  <ArtisanDashboard 
+                    user={user} 
+                    artisans={artisans} 
+                    onUpdateArtisan={updateArtisan}
+                  />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              } 
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;
