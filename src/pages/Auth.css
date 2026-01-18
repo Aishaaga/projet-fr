@@ -67,6 +67,37 @@
   text-decoration: underline;
 }
 
+/* Dark mode styles */
+[data-theme="dark"] .auth-page {
+  background-color: #111827;
+}
+
+[data-theme="dark"] .auth-container {
+  background: #1f2937;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .auth-header h1 {
+  color: #f3f4f6;
+}
+
+[data-theme="dark"] .auth-header p {
+  color: #d1d5db;
+}
+
+[data-theme="dark"] .error-message {
+  background: #7f1d1d;
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .auth-footer {
+  color: #d1d5db;
+}
+
+[data-theme="dark"] .auth-footer a {
+  color: #60a5fa;
+}
+
 @media (max-width: 768px) {
   .auth-container {
     padding: 24px;

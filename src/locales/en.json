@@ -1,0 +1,55 @@
+{
+  "header": {
+    "home": "Home",
+    "artisans": "Artisans",
+    "dashboard": "My Dashboard",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "hello": "Hello, {name}",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "home": {
+    "title": "Find the perfect artisan for your home projects",
+    "subtitle": "ArtisanLink directly connects individuals in need of home services with qualified professionals. Simplify your search for artisans and get quotes quickly.",
+    "findArtisan": "Find an artisan",
+    "becomeArtisan": "Become an artisan",
+    "whyChoose": "Why choose ArtisanLink?",
+    "feature1Title": "Simplified search",
+    "feature1Desc": "Quickly find the artisan that matches your needs thanks to our advanced search and filter system.",
+    "feature2Title": "Verified artisans",
+    "feature2Desc": "All our artisans are qualified and rated by the community. Check reviews and experiences from other clients.",
+    "feature3Title": "Regular opportunities",
+    "feature3Desc": "As an artisan, receive new project opportunities regularly and grow your business.",
+    "feature4Title": "Direct communication",
+    "feature4Desc": "Contact artisans directly, exchange easily and get personalized quotes in just a few clicks.",
+    "missionTitle": "Our Mission",
+    "missionText": "ArtisanLink is an innovative web platform that directly connects individuals in need of home services with qualified professionals. Our mission is to simplify the search for artisans while offering professionals a regular source of new opportunities.",
+    "ctaTitle": "Ready to get started?",
+    "ctaSubtitle": "Join ArtisanLink today and discover a new way to find or offer home services.",
+    "createAccount": "Create an account"
+  },
+  "artisansList": {
+    "title": "Find your artisan",
+    "subtitle": "Discover qualified professionals near you",
+    "searchPlaceholder": "Search by name, profession or location...",
+    "allProfessions": "All professions",
+    "results": "{count} artisan found",
+    "resultsPlural": "{count} artisans found",
+    "noResults": "No artisan found. Try modifying your search criteria."
+  },
+  "common": {
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "email": "Email",
+    "phone": "Phone",
+    "description": "Description",
+    "services": "Services",
+    "contact": "Contact"
+  }
+}

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useApp } from '../context/AppContext';
+import { translate } from '../utils/translations';
 import './Home.css';
 
 function Home() {
+  const { language } = useApp();
   return (
     <div className="home">
       {/* Hero Section */}
@@ -10,19 +13,17 @@ function Home() {
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
-              Trouvez l'artisan parfait pour vos projets à domicile
+              {translate(language, 'home.title')}
             </h1>
             <p className="hero-subtitle">
-              ArtisanLink connecte directement les particuliers ayant besoin de services 
-              à domicile avec des professionnels qualifiés. Simplifiez votre recherche 
-              d'artisans et obtenez des devis rapidement.
+              {translate(language, 'home.subtitle')}
             </p>
             <div className="hero-buttons">
               <Link to="/artisans" className="btn btn-primary btn-large">
-                Trouver un artisan
+                {translate(language, 'home.findArtisan')}
               </Link>
               <Link to="/register" className="btn btn-outline btn-large">
-                Devenir artisan
+                {translate(language, 'home.becomeArtisan')}
               </Link>
             </div>
           </div>
@@ -32,41 +33,37 @@ function Home() {
       {/* Features Section */}
       <section className="features">
         <div className="container">
-          <h2 className="section-title">Pourquoi choisir ArtisanLink ?</h2>
+          <h2 className="section-title">{translate(language, 'home.whyChoose')}</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">🔍</div>
-              <h3 className="feature-title">Recherche simplifiée</h3>
+              <h3 className="feature-title">{translate(language, 'home.feature1Title')}</h3>
               <p className="feature-description">
-                Trouvez rapidement l'artisan qui correspond à vos besoins grâce 
-                à notre système de recherche et de filtres avancés.
+                {translate(language, 'home.feature1Desc')}
               </p>
             </div>
             
             <div className="feature-card">
               <div className="feature-icon">⭐</div>
-              <h3 className="feature-title">Artisans vérifiés</h3>
+              <h3 className="feature-title">{translate(language, 'home.feature2Title')}</h3>
               <p className="feature-description">
-                Tous nos artisans sont qualifiés et notés par la communauté. 
-                Consultez les avis et expériences d'autres clients.
+                {translate(language, 'home.feature2Desc')}
               </p>
             </div>
             
             <div className="feature-card">
               <div className="feature-icon">💼</div>
-              <h3 className="feature-title">Opportunités régulières</h3>
+              <h3 className="feature-title">{translate(language, 'home.feature3Title')}</h3>
               <p className="feature-description">
-                En tant qu'artisan, recevez des nouvelles opportunités de projets 
-                régulièrement et développez votre activité.
+                {translate(language, 'home.feature3Desc')}
               </p>
             </div>
             
             <div className="feature-card">
               <div className="feature-icon">📱</div>
-              <h3 className="feature-title">Communication directe</h3>
+              <h3 className="feature-title">{translate(language, 'home.feature4Title')}</h3>
               <p className="feature-description">
-                Contactez directement les artisans, échangez facilement et obtenez 
-                des devis personnalisés en quelques clics.
+                {translate(language, 'home.feature4Desc')}
               </p>
             </div>
           </div>
@@ -77,12 +74,9 @@ function Home() {
       <section className="mission">
         <div className="container">
           <div className="mission-content">
-            <h2 className="section-title">Notre Mission</h2>
+            <h2 className="section-title">{translate(language, 'home.missionTitle')}</h2>
             <p className="mission-text">
-              ArtisanLink est une plateforme web innovante qui connecte directement 
-              les particuliers ayant besoin de services à domicile avec des professionnels 
-              qualifiés. Notre mission est de simplifier la recherche d'artisans tout 
-              en offrant aux professionnels une source régulière de nouvelles opportunités.
+              {translate(language, 'home.missionText')}
             </p>
           </div>
         </div>
@@ -92,14 +86,13 @@ function Home() {
       <section className="cta">
         <div className="container">
           <div className="cta-content">
-            <h2 className="cta-title">Prêt à commencer ?</h2>
+            <h2 className="cta-title">{translate(language, 'home.ctaTitle')}</h2>
             <p className="cta-subtitle">
-              Rejoignez ArtisanLink dès aujourd'hui et découvrez une nouvelle façon 
-              de trouver ou proposer des services à domicile.
+              {translate(language, 'home.ctaSubtitle')}
             </p>
             <div className="cta-buttons">
               <Link to="/register" className="btn btn-primary btn-large">
-                Créer un compte
+                {translate(language, 'home.createAccount')}
               </Link>
             </div>
           </div>

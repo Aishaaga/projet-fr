@@ -1,0 +1,55 @@
+{
+  "header": {
+    "home": "Accueil",
+    "artisans": "Artisans",
+    "dashboard": "Mon Tableau de bord",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "hello": "Bonjour, {name}",
+    "language": "Langue",
+    "theme": "Thème"
+  },
+  "home": {
+    "title": "Trouvez l'artisan parfait pour vos projets à domicile",
+    "subtitle": "ArtisanLink connecte directement les particuliers ayant besoin de services à domicile avec des professionnels qualifiés. Simplifiez votre recherche d'artisans et obtenez des devis rapidement.",
+    "findArtisan": "Trouver un artisan",
+    "becomeArtisan": "Devenir artisan",
+    "whyChoose": "Pourquoi choisir ArtisanLink ?",
+    "feature1Title": "Recherche simplifiée",
+    "feature1Desc": "Trouvez rapidement l'artisan qui correspond à vos besoins grâce à notre système de recherche et de filtres avancés.",
+    "feature2Title": "Artisans vérifiés",
+    "feature2Desc": "Tous nos artisans sont qualifiés et notés par la communauté. Consultez les avis et expériences d'autres clients.",
+    "feature3Title": "Opportunités régulières",
+    "feature3Desc": "En tant qu'artisan, recevez des nouvelles opportunités de projets régulièrement et développez votre activité.",
+    "feature4Title": "Communication directe",
+    "feature4Desc": "Contactez directement les artisans, échangez facilement et obtenez des devis personnalisés en quelques clics.",
+    "missionTitle": "Notre Mission",
+    "missionText": "ArtisanLink est une plateforme web innovante qui connecte directement les particuliers ayant besoin de services à domicile avec des professionnels qualifiés. Notre mission est de simplifier la recherche d'artisans tout en offrant aux professionnels une source régulière de nouvelles opportunités.",
+    "ctaTitle": "Prêt à commencer ?",
+    "ctaSubtitle": "Rejoignez ArtisanLink dès aujourd'hui et découvrez une nouvelle façon de trouver ou proposer des services à domicile.",
+    "createAccount": "Créer un compte"
+  },
+  "artisansList": {
+    "title": "Trouvez votre artisan",
+    "subtitle": "Découvrez des professionnels qualifiés près de chez vous",
+    "searchPlaceholder": "Rechercher par nom, profession ou localisation...",
+    "allProfessions": "Toutes les professions",
+    "results": "{count} artisan trouvé",
+    "resultsPlural": "{count} artisans trouvés",
+    "noResults": "Aucun artisan trouvé. Essayez de modifier vos critères de recherche."
+  },
+  "common": {
+    "back": "Retour",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "add": "Ajouter",
+    "email": "Email",
+    "phone": "Téléphone",
+    "description": "Description",
+    "services": "Services",
+    "contact": "Contacter"
+  }
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
+import { AppProvider } from './context/AppContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -30,14 +31,14 @@ function App() {
       const initialArtisans = [
         {
           id: 1,
-          name: 'Jean Dupont',
+          name: 'Mohammed Najim',
           profession: 'Plombier',
           rating: 4.8,
           reviews: 124,
-          location: 'Paris, 75001',
+          location: 'Agadir, 85000',
           description: 'Plombier expérimenté avec plus de 15 ans d\'expérience. Spécialisé en rénovation et dépannage d\'urgence.',
           services: ['Réparation fuite', 'Installation sanitaire', 'Chauffage', 'Dépannage urgence'],
-          email: 'jean.dupont@email.com',
+          email: 'mohammed.najim@email.com',
           phone: '06 12 34 56 78',
           image: 'https://via.placeholder.com/300x300?text=Jean+Dupont'
         },
@@ -47,7 +48,7 @@ function App() {
           profession: 'Électricienne',
           rating: 4.9,
           reviews: 89,
-          location: 'Paris, 75011',
+          location: 'Agadir, 85000',
           description: 'Électricienne certifiée, disponible 7j/7 pour tous vos besoins électriques.',
           services: ['Installation électrique', 'Mise aux normes', 'Dépannage', 'Éclairage'],
           email: 'marie.martin@email.com',
@@ -60,7 +61,7 @@ function App() {
           profession: 'Menuisier',
           rating: 4.7,
           reviews: 156,
-          location: 'Paris, 75015',
+          location: 'Agadir, 85000',
           description: 'Menuisier artisan depuis 20 ans, création sur mesure et rénovation.',
           services: ['Meubles sur mesure', 'Parquet', 'Fenêtres', 'Armoires'],
           email: 'pierre.leroy@email.com',
@@ -73,7 +74,7 @@ function App() {
           profession: 'Peintre',
           rating: 4.6,
           reviews: 203,
-          location: 'Paris, 75020',
+          location: 'Agadir, 85000',
           description: 'Peintre décoratrice, travail soigné et respect des délais.',
           services: ['Peinture intérieure', 'Peinture extérieure', 'Papier peint', 'Finition'],
           email: 'sophie.bernard@email.com',
@@ -110,47 +111,49 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <Header user={user} onLogout={handleLogout} />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route 
-              path="/login" 
-              element={user ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} 
-            />
-            <Route 
-              path="/register" 
-              element={user ? <Navigate to="/" /> : <Register onRegister={handleRegister} />} 
-            />
-            <Route 
-              path="/artisans" 
-              element={<ArtisansList artisans={artisans} />} 
-            />
-            <Route 
-              path="/artisan/:id" 
-              element={<ArtisanProfile artisans={artisans} user={user} />} 
-            />
-            <Route 
-              path="/dashboard" 
-              element={
-                user && user.type === 'artisan' ? (
-                  <ArtisanDashboard 
-                    user={user} 
-                    artisans={artisans} 
-                    onUpdateArtisan={updateArtisan}
-                  />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              } 
-            />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <AppProvider>
+      <Router>
+        <div className="App">
+          <Header user={user} onLogout={handleLogout} />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route 
+                path="/login" 
+                element={user ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} 
+              />
+              <Route 
+                path="/register" 
+                element={user ? <Navigate to="/" /> : <Register onRegister={handleRegister} />} 
+              />
+              <Route 
+                path="/artisans" 
+                element={<ArtisansList artisans={artisans} />} 
+              />
+              <Route 
+                path="/artisan/:id" 
+                element={<ArtisanProfile artisans={artisans} user={user} />} 
+              />
+              <Route 
+                path="/dashboard" 
+                element={
+                  user && user.type === 'artisan' ? (
+                    <ArtisanDashboard 
+                      user={user} 
+                      artisans={artisans} 
+                      onUpdateArtisan={updateArtisan}
+                    />
+                  ) : (
+                    <Navigate to="/login" />
+                  )
+                } 
+              />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </AppProvider>
   );
 }
 
